@@ -28,7 +28,7 @@ const mongoose = require('mongoose');
 const initdata = require('./data.js');
 const Listing = require('../models/listing.js');
 
-const MONGO_URL = 'mongodb://localhost:27017/wanderlust';
+const MONGO_URL = process.env.MONGO_URI || "mongodb://localhost:27017/wanderlust";
 
 
 main().then(() => console.log('Connected to DB'))
@@ -57,7 +57,7 @@ const initDB = async () => {
     const geometry = await geocodeLocation(`${obj.location}, ${obj.country}`);
     seedData.push({
       ...obj,
-      owner: '68b2f0f47e3e50aba5561eb1',
+      owner: '6969f8fd46ea6bd0cdb3b6d9',
       geometry // e.g. { type: 'Point', coordinates: [lng, lat] }
     });
   }
