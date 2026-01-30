@@ -57,17 +57,10 @@ const sessionOptions = {
 // app.get("/", (req, res) => {
 //   res.send("Hii,I am root!");
 // });
-<<<<<<< HEAD
-app.get("/", (req, res) => {
-  res.redirect("/listings");
-});
-=======
 
-app.get("/", (req, res) => {
-  res.redirect("/listings");
-});
 
->>>>>>> e84db8f (Fix Render session + env config)
+
+
 app.use(session(sessionOptions));
 app.use(flash());
 
@@ -85,6 +78,9 @@ app.use((req,res,next)=>{
   next();
 });
 
+app.get("/", (req, res) => {
+  res.render("home");
+});
 // app.get("/demouser",async(req,res)=>{
 //   let fakeUser = new User({
 //     email:"student@gmail.com",
